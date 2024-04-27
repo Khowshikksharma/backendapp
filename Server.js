@@ -1,6 +1,8 @@
 const express = require("express")
 const mongoose = require("mongoose")
 const cors = require("cors")
+require('dotenv').config();
+
 
 // const dburl = "mongodb://localhost:27017/sdp4"
 // mongoose.connect(dburl).then(() => {
@@ -9,7 +11,7 @@ const cors = require("cors")
 //     console.log(e.message)
 // });
 
-const dburl = "mongodb+srv://klu:klu@cluster0.pbhejrv.mongodb.net/sdp4?retryWrites=true&w=majority"
+const  dburl=process.env.mongodburl
 mongoose.connect(dburl).then(() => {
     console.log("Connected to MongoDB Atlas Successfully")
 }).catch((e) => {
@@ -28,7 +30,7 @@ app.use("",facultyrouter)
 app.use("",adminrouter)
 app.use("",courserouter)
 
-const port = 2032
+const port = process.env.PORT || 2032
 app.listen(port,()=>{
     console.log(`Server is running at the port ${port}`)
 })

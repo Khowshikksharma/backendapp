@@ -53,22 +53,6 @@ const studentschema = new mongoose.Schema({
         required: true,
         unique: true
     },
-    // tenthid:{
-    //     type: String,
-    //     required: true
-    // },
-    // tenthmarks:{
-    //     type: Number,
-    //     required: true
-    // },
-    // twelvethid:{
-    //     type: String,
-    //     required: true
-    // },
-    // twelvethmarks:{
-    //     type: Number,
-    //     required: true
-    // },
     address:{
         type: String,
         required: true
